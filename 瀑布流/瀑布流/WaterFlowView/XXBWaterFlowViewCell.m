@@ -13,10 +13,14 @@
 + (instancetype)cellWithWaterFlowView:(XXBWaterFlowView *)waterFlowView
 {
     static NSString *ID = @"XXBWaterViewCell";
-    XXBWaterFlowViewCell *cell = [waterFlowView dequeueReusableCellWithIdentifier:ID];
+    return [self cellWithWaterFlowView:waterFlowView andIdentifier:ID];
+}
++ (instancetype)cellWithWaterFlowView:(XXBWaterFlowView *)waterFlowView andIdentifier:(NSString*)identifier
+{
+    XXBWaterFlowViewCell *cell = [waterFlowView dequeueReusableCellWithIdentifier:identifier];
     if (cell == nil) {
         cell = [[self alloc] init];
-        cell.identifier = ID;
+        cell.identifier = identifier;
     }
     return cell;
 }

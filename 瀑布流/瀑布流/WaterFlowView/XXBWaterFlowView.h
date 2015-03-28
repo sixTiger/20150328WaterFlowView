@@ -9,12 +9,12 @@
 #import <UIKit/UIKit.h>
 
 typedef enum {
-    XXBWaterFlowViewMarginTypeTop,
-    XXBWaterFlowViewMarginTypeBottom,
-    XXBWaterFlowViewMarginTypeLeft,
-    XXBWaterFlowViewMarginTypeRight,
-    XXBWaterFlowViewMarginTypeColumn, // 每一列
-    XXBWaterFlowViewMarginTypeRow, // 每一行
+    XXBWaterFlowViewMarginTypeTop,          //顶部
+    XXBWaterFlowViewMarginTypeBottom,       //底部
+    XXBWaterFlowViewMarginTypeLeft,         //左边
+    XXBWaterFlowViewMarginTypeRight,        //右边
+    XXBWaterFlowViewMarginTypeColumn,       //每一列
+    XXBWaterFlowViewMarginTypeRow,          //每一行
 } XXBWaterFlowViewMarginType;
 
 @class XXBWaterFlowView,XXBWaterFlowViewCell;

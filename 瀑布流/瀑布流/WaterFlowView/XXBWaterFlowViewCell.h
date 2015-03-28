@@ -17,4 +17,5 @@
  *  创建有默认标示的cell 标示是 XXBWaterViewCell
  */
 + (instancetype)cellWithWaterFlowView:(XXBWaterFlowView *)waterFlowView;
++ (instancetype)cellWithWaterFlowView:(XXBWaterFlowView *)waterFlowView andIdentifier:(NSString*)identifier;
 @end
