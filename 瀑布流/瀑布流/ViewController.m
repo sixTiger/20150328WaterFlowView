@@ -39,16 +39,6 @@
     waterflowView.delegate = self;
     [self.view addSubview:waterflowView];
     self.waterflowView = waterflowView;
-    
-    // 2.继承刷新控件
-    //    [waterflowView addFooterWithCallback:^{
-    //        NSLog(@"进入上拉加载状态");
-    //    }];
-    
-    //    [waterflowView addHeaderWithCallback:^{
-    //        NSLog(@"进入下拉加载状态");
-    //    }];
-    
     [waterflowView addHeaderWithTarget:self action:@selector(loadNewShops)];
     [waterflowView addFooterWithTarget:self action:@selector(loadMoreShops)];
 }
@@ -100,7 +90,7 @@
     XXBShopCell *cell = [XXBShopCell cellWithWaterFlowView:waterFlowView];
     
     cell.shop = self.shops[index];
-    NSLog(@"%@ %p",cell.identifier,cell);
+    NSLog(@"cell的地址  %@ %p",cell.identifier,cell);
     return cell;
 }
 

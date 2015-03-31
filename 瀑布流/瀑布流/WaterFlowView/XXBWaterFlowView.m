@@ -159,22 +159,23 @@
                 // 从scrollView和字典中移除
                 [cell removeFromSuperview];
                 [self.displayingCells removeObjectForKey:@(i)];
-                
-                // 存放进缓存池
-                NSMutableSet *cellSet = [self.reusableCellDict valueForKey:cell.identifier];
-                if (cellSet == nil)
+                if(cell.identifier)
                 {
-                    cellSet = [NSMutableSet set];
-                    [self.reusableCellDict setValue:cellSet forKey:cell.identifier];
-                    
+                    // 有标示的 存放进缓存池
+                    NSMutableSet *cellSet = [self.reusableCellDict valueForKey:cell.identifier];
+                    if (cellSet == nil)
+                    {
+                        cellSet = [NSMutableSet set];
+                        [self.reusableCellDict setValue:cellSet forKey:cell.identifier];
+                        
+                    }
+                    [cellSet addObject:cell];
                 }
-                [cellSet addObject:cell];
+                
             }
         }
     }
 }
-
-#warning 这个地方可以用字典优化
 - (id)dequeueReusableCellWithIdentifier:(NSString *)identifier
 {
     __block XXBWaterFlowViewCell *reusableCell = nil;
