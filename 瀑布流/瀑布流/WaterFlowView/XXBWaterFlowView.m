@@ -29,11 +29,6 @@
 @end
 
 @implementation XXBWaterFlowView
-
-- (void)willMoveToSuperview:(UIView *)newSuperview
-{
-    [self reloadData];
-}
 /**
  *  刷新数据
  */
@@ -297,5 +292,15 @@
         _reusableCellDict = [NSMutableDictionary dictionary];
     }
     return _reusableCellDict;
+}
+- (void)setDataSource:(id<XXBWaterFlowViewDataSource>)dataSource
+{
+    _dataSource = dataSource;
+    [self reloadData];
+}
+- (void)setDelegate:(id<XXBWaterFlowViewDelegate>)delegate
+{
+    [super setDelegate:delegate];
+    [self reloadData];
 }
 @end
