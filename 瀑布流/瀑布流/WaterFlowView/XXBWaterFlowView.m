@@ -274,16 +274,8 @@
     CGFloat columnM = [self marginForType:XXBWaterFlowViewMarginTypeColumn];
     return (self.bounds.size.width - leftM - rightM - (numberOfColumns - 1) * columnM) / numberOfColumns;
 }
-- (void)setDataSource:(id<XXBWaterFlowViewDataSource>)dataSource
-{
-    _dataSource = dataSource;
-    [self reloadData];
-}
-- (void)setDelegate:(id<XXBWaterFlowViewDelegate>)delegate
-{
-    _delegate = delegate;
-    [self reloadData];
-}
+
+#pragma -懒加载
 - (NSMutableArray *)cellFrames
 {
     if (_cellFrames == nil) {
@@ -291,6 +283,7 @@
     }
     return _cellFrames;
 }
+
 - (NSMutableDictionary *)displayingCells
 {
     if (_displayingCells == nil) {

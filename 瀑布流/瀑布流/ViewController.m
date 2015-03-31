@@ -35,9 +35,9 @@
     // 跟随着父控件的尺寸而自动伸缩
     waterflowView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     waterflowView.frame = self.view.bounds;
-    [self.view addSubview:waterflowView];
     waterflowView.dataSource = self;
     waterflowView.delegate = self;
+    [self.view addSubview:waterflowView];
     self.waterflowView = waterflowView;
     [waterflowView addHeaderWithTarget:self action:@selector(loadNewShops)];
     [waterflowView addFooterWithTarget:self action:@selector(loadMoreShops)];
