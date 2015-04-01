@@ -31,7 +31,6 @@
     
     // 1.瀑布流控件
     XXBWaterFlowView *waterflowView = [[XXBWaterFlowView alloc] init];
-    waterflowView.backgroundColor = [UIColor redColor];
     // 跟随着父控件的尺寸而自动伸缩
     waterflowView.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
     waterflowView.frame = self.view.bounds;
