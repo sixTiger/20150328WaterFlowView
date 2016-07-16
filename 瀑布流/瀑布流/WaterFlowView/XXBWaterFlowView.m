@@ -29,6 +29,9 @@
 @end
 
 @implementation XXBWaterFlowView
+
+@dynamic delegate;
+
 /**
  *  刷新数据
  */
